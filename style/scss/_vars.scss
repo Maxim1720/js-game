@@ -1,0 +1,13 @@
+$primary-color: rgb(182, 118, 0);
+$secondary-color: rgb(0, 0, 0);
+$text-color: white;
+$primary-font-size: 40px;
+
+$main-place-width: 70vw;
+$main-place-height: 70vh;
+
+$inner-place-width: $main-place-width - 30;
+$inner-place-height: $main-place-height - 30;
+
+$fly-box-width: $inner-place-width - 35;
+$fly-box-height: $inner-place-height - 35;

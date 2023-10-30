@@ -1,0 +1,45 @@
+@import 'vars';
+
+
+@mixin place($width, $height) {
+    border: 3px solid $primary-color;
+    width: $width;
+    height: $height;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    box-shadow: 1px 1px 10px 1px $primary-color;
+    
+}
+
+@mixin transparent-box($width, $height){
+    @include place($width, $height);
+}
+
+@mixin primaryBgColorBox($width, $height){
+    @include place($width, $height);
+    background-color: $primary-color;
+}
+
+@mixin btn($text){
+    border-radius: 30px;
+    padding: 5px 2%;
+    text-align: center;
+    margin-top: 10%;
+    background: $secondary-color;
+    border: 3px solid $primary-color;
+    color: rgb(160, 160, 160);
+    opacity: 70%;
+    transition: 0.160s;
+    content: $text;
+
+    &:hover{
+        color: white;
+        opacity: 100%;
+    }
+    &:active{
+        box-shadow: 10px 10px 200px 10px $primary-color;
+    }
+}
