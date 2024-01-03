@@ -5,6 +5,7 @@ class TimerOutputer {
     constructor(props) {
       this.#timerElement = props.timerElement;
       this.#currentDate = new Date();
+      // this.#currentDate = new Date(2023,10,31,15,6,24,0);
     }
   
     update() {
@@ -12,8 +13,15 @@ class TimerOutputer {
     }
   
     setTimeToElementInner() {
-      let betweenDate = new Date(Date.now() - this.#currentDate.getTime());
-      this.#timerElement.innerText = String(betweenDate.getMinutes() + ":" + betweenDate.getSeconds());
+      const calculatedDate = this.#getCalculatedDate();
+      calculatedDate.setMinutes(calculatedDate.getMinutes() + calculatedDate.getTimezoneOffset());
+      this.#timerElement.innerText = calculatedDate.toLocaleTimeString();
+    }
+
+    #getCalculatedDate(){
+      console.log("now: " + new Date());
+      console.log("fixed: " + this.#currentDate);
+      return new Date(new Date().getTime() - this.#currentDate.getTime());
     }
   }
 
